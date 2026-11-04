@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Один запрос — 1!</title>
+  <desc>Самостоятельный знак проекта: синяя единица и отдельный восклицательный знак на светло-зелёном фоне.</desc>
+  <rect width="32" height="32" rx="5" fill="#a7ed7c"/>
+  <polygon points="5,12 12,6 17,6 17,26 12,26 12,13 8,16" fill="#153dda"/>
+  <polygon points="24,6 28,6 27.2,19 24.8,19" fill="#153dda"/>
+  <circle cx="26" cy="24" r="2.3" fill="#153dda"/>
+</svg>

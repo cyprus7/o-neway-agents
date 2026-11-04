@@ -1,0 +1,147 @@
+{
+  "feature": "002-travel-pricing",
+  "status": "definitions_not_executed",
+  "synthetic_fixtures_require_label": true,
+  "scenarios": [
+    {
+      "id": "P001",
+      "name": "group_price",
+      "expected": "Group total is not multiplied by passenger count",
+      "requirement": "FR-003",
+      "test_task": "T010"
+    },
+    {
+      "id": "P002",
+      "name": "per_person",
+      "expected": "Per-person total requires verified passenger applicability",
+      "requirement": "FR-003",
+      "test_task": "T010"
+    },
+    {
+      "id": "P003",
+      "name": "night_room",
+      "expected": "Night x rooms x nights only with uniform confirmed rate scope",
+      "requirement": "FR-003",
+      "test_task": "T010"
+    },
+    {
+      "id": "P004",
+      "name": "child_infant",
+      "expected": "Real child ages and infant semantics preserved; no silent exclusion",
+      "requirement": "FR-002",
+      "test_task": "T010"
+    },
+    {
+      "id": "P005",
+      "name": "one_way",
+      "expected": "Outbound-only never represented as full roundtrip",
+      "requirement": "FR-003",
+      "test_task": "T010"
+    },
+    {
+      "id": "P006",
+      "name": "tax_included",
+      "expected": "No double addition of taxes already included",
+      "requirement": "FR-007",
+      "test_task": "T010"
+    },
+    {
+      "id": "P007",
+      "name": "unknown_charges",
+      "expected": "Unknown mandatory fees leave total incomplete",
+      "requirement": "FR-006",
+      "test_task": "T015"
+    },
+    {
+      "id": "P008",
+      "name": "currency",
+      "expected": "Response currency verified; mixed currency without FX not summed",
+      "requirement": "FR-007",
+      "test_task": "T010"
+    },
+    {
+      "id": "P009",
+      "name": "partial",
+      "expected": "Flight+stay visible with missing transfer and full_trip null",
+      "requirement": "FR-001",
+      "test_task": "T015"
+    },
+    {
+      "id": "P010",
+      "name": "lower_bound",
+      "expected": "Point/range plus lower-bound preserves unknown maximum and never verified within-budget",
+      "requirement": "FR-006",
+      "test_task": "T015"
+    },
+    {
+      "id": "P011",
+      "name": "estimate_basis",
+      "expected": "Two compatible distinct real observations produce deterministic minmax",
+      "requirement": "FR-012",
+      "test_task": "T023"
+    },
+    {
+      "id": "P012",
+      "name": "single_stale",
+      "expected": "Single old point is history, no arbitrary percentage range",
+      "requirement": "FR-013",
+      "test_task": "T023"
+    },
+    {
+      "id": "P013",
+      "name": "no_evidence",
+      "expected": "No invented number when observations absent",
+      "requirement": "FR-013",
+      "test_task": "T023"
+    },
+    {
+      "id": "P014",
+      "name": "provider_policy",
+      "expected": "Forbidden current/history reuse wins over generic cache window",
+      "requirement": "FR-014",
+      "test_task": "T023"
+    },
+    {
+      "id": "P015",
+      "name": "identity",
+      "expected": "Allowed candidate or unknown-unit refinement applies; fixed-entity mismatch/old dates reject; replacement clears old metadata/transfer",
+      "requirement": "FR-015",
+      "test_task": "T012"
+    },
+    {
+      "id": "P016",
+      "name": "dynamic_page",
+      "expected": "Fill/verify context then click search and read fresh visible tariff",
+      "requirement": "FR-009",
+      "test_task": "T016"
+    },
+    {
+      "id": "P017",
+      "name": "blocked",
+      "expected": "CAPTCHA/login/no_offers/parseerror/timeouts distinguished",
+      "requirement": "FR-011",
+      "test_task": "T016"
+    },
+    {
+      "id": "P018",
+      "name": "refresh_race",
+      "expected": "Shared jobs index permits exactly one message/refresh; dedup and request-context CAS ignore late result while compatible offer refinement applies",
+      "requirement": "FR-015",
+      "test_task": "T027"
+    },
+    {
+      "id": "P019",
+      "name": "budget_only",
+      "expected": "Budget change reuses valid observations, estimates never hard-pass",
+      "requirement": "FR-016",
+      "test_task": "T027"
+    },
+    {
+      "id": "P020",
+      "name": "expiry_receipt",
+      "expected": "After quoted expiry the same revision/IDs checkout returns409 before receipt lookup; only refreshed/reviewed revision/new selection allows incomplete simulation",
+      "requirement": "FR-017",
+      "test_task": "T027"
+    }
+  ]
+}

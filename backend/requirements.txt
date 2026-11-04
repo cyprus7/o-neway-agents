@@ -1,0 +1,2 @@
+-r requirements-agent.txt
+duckdb==1.4.3

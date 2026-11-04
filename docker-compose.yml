@@ -1,0 +1,224 @@
+name: one-request
+x-tracing-environment: &tracing-environment
+  # No endpoint => no SDK, exporter thread or tracing middleware.
+  OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: "${OTEL_EXPORTER_OTLP_TRACES_ENDPOINT:-}"
+  OTEL_EXPORTER_OTLP_TRACES_HEADERS: "${OTEL_EXPORTER_OTLP_TRACES_HEADERS:-}"
+  OTEL_TRACES_SAMPLER_ARG: "${OTEL_TRACES_SAMPLER_ARG:-1.0}"
+  OTEL_DEPLOYMENT_ENVIRONMENT: "${OTEL_DEPLOYMENT_ENVIRONMENT:-local}"
+  OTEL_SERVICE_VERSION: "${OTEL_SERVICE_VERSION:-development}"
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:${APP_PORT:-8080}:8080"
+    environment:
+      # Explicit allowlist: deployment/design credentials in .env stay on the host.
+      <<: *tracing-environment
+      LLM_BASE_URL: "${LLM_BASE_URL:-https://inference.hetzner.com/api/v1}"
+      LLM_MODEL: "${LLM_MODEL:-Qwen/Qwen3.8-27B}"
+      LLM_API_KEY: "${LLM_API_KEY:-}"
+      LLM_ENABLED: "${LLM_ENABLED:-1}"
+      PROVIDER_GATEWAY_URL: "${PROVIDER_GATEWAY_URL:-http://provider-gateway:8091}"
+      APP_TIMEZONE: "${APP_TIMEZONE:-Asia/Nicosia}"
+      APP_ALLOWED_ORIGINS: "${APP_ALLOWED_ORIGINS:-}"
+      APP_PUBLIC_URL: "${APP_PUBLIC_URL:-}"
+      TELEGRAM_MODE: "${TELEGRAM_MODE:-disabled}"
+      TELEGRAM_BOT_TOKEN: "${TELEGRAM_BOT_TOKEN:-}"
+      TELEGRAM_WEBHOOK_SECRET: "${TELEGRAM_WEBHOOK_SECRET:-}"
+      DATA_DIR: /app/data
+      DATABASE_PATH: /app/data/one-request.sqlite3
+      FRONTEND_DIST: /app/frontend/dist
+      LLM_REQUESTS_PER_MINUTE: "10"
+    volumes:
+      - app-data:/app/data
+    depends_on:
+      provider-gateway:
+        condition: service_healthy
+    networks: [agent-data, inference-egress, telemetry-agent]
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 20s
+  provider-gateway:
+    build:
+      context: .
+      dockerfile: provider_gateway/Dockerfile
+    environment:
+      <<: *tracing-environment
+      LOCAL_CATALOG_ENABLED: "${LOCAL_CATALOG_ENABLED:-1}"
+      WEB_FALLBACK_ENABLED: "${WEB_FALLBACK_ENABLED:-1}"
+      OLLAMA_API_KEY: "${OLLAMA_API_KEY:-}"
+      SERPAPI_API_KEY: "${SERPAPI_API_KEY:-}"
+      APP_TIMEZONE: "${APP_TIMEZONE:-Asia/Nicosia}"
+      SEARXNG_URL: http://searxng:8080
+      EMBEDDING_URL: "${EMBEDDING_URL-http://embedding:11434}"
+      EMBEDDING_MODEL: qwen3-embedding:0.6b
+      EMBEDDING_MODEL_DIGEST: ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d
+      PRICE_WORKER_URL: http://price-worker:8080
+      FLIGHT_SEARCH_URL: http://flight-search:8080
+      KEYLESS_PRICING_ENABLED: "${KEYLESS_PRICING_ENABLED:-1}"
+      PROVIDER_CACHE_PATH: /app/provider-data/cache.sqlite3
+    volumes:
+      - provider-data:/app/provider-data
+    networks: [agent-data, provider-egress, telemetry-gateway]
+    depends_on:
+      searxng:
+        condition: service_healthy
+      embedding:
+        condition: service_started
+      price-worker:
+        condition: service_started
+      flight-search:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 512m
+    cpus: 1.0
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8091/ready', timeout=2)"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 20s
+  price-worker:
+    build:
+      context: .
+      dockerfile: price_worker/Dockerfile
+    environment:
+      <<: *tracing-environment
+    cpus: 2.0
+    mem_limit: 1g
+    shm_size: 256m
+    init: true
+    networks: [provider-egress, telemetry-worker]
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+      - seccomp:./infra/price-worker/seccomp.json
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request,sys; d=json.load(urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)); sys.exit(0 if d['browser_ready'] else 1)"]
+      interval: 20s
+      timeout: 3s
+      retries: 3
+      start_period: 20s
+  flight-search:
+    build:
+      context: .
+      dockerfile: flight_search/Dockerfile
+    environment:
+      <<: *tracing-environment
+    cpus: 1.0
+    mem_limit: 384m
+    shm_size: 64m
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+      - /home/crawler:size=32m,uid=10001,gid=10001,mode=0700
+    stop_grace_period: 40s
+    networks: [provider-egress, telemetry-flight]
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+      - seccomp:./infra/price-worker/seccomp.json
+    cap_drop: [ALL]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request,sys; d=json.load(urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)); sys.exit(0 if d['browser_ready'] else 1)"]
+      interval: 20s
+      timeout: 3s
+      retries: 3
+      start_period: 20s
+  embedding:
+    build: ./infra/embedding
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_MODELS: /models
+      OLLAMA_NO_CLOUD: "1"
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "1"
+      OLLAMA_MAX_QUEUE: "8"
+      OLLAMA_CONTEXT_LENGTH: "2048"
+      OLLAMA_KEEP_ALIVE: 10m
+      CUDA_VISIBLE_DEVICES: "-1"
+    volumes:
+      - embedding-data:/models
+    cpus: 4.0
+    mem_limit: 3g
+    init: true
+    networks: [provider-egress]
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "/opt/embedding/health.sh"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10m
+  searxng:
+    image: searxng/searxng@sha256:aecad882e86eeb022b76351c8dce4eb48d0cbb16a5f1691f77ea32c96d317502
+    user: "977:977"
+    networks: [provider-egress]
+    volumes:
+      - ./infra/searxng/settings.yml:/etc/searxng/settings.yml:ro
+    environment:
+      SEARXNG_BASE_URL: http://searxng:8080/
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "/usr/local/searxng/.venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/healthz', timeout=3)"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+  jaeger:
+    image: cr.jaegertracing.io/jaegertracing/jaeger:2.22.0@sha256:836b967b5abcf1f7758066aa6b348619267a2f1459f72d472840570f9bd88a17
+    profiles: [traces]
+    command: ["--config=/etc/jaeger/config.yaml"]
+    volumes:
+      - ./infra/jaeger/config.yaml:/etc/jaeger/config.yaml:ro
+    ports:
+      - "127.0.0.1:${JAEGER_UI_PORT:-16686}:16686"
+      - "127.0.0.1:${JAEGER_OTLP_PORT:-24318}:4318"
+    # Docker Desktop publishes loopback ports through this viewer-only bridge.
+    networks: [telemetry-agent, telemetry-gateway, telemetry-worker, telemetry-flight, telemetry-viewer]
+    user: "10001:10001"
+    read_only: true
+    mem_limit: 256m
+    cpus: 0.5
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: unless-stopped
+volumes:
+  app-data:
+  provider-data:
+  embedding-data:
+networks:
+  agent-data:
+    internal: true
+  inference-egress:
+  provider-egress:
+  telemetry-agent:
+    internal: true
+  telemetry-gateway:
+    internal: true
+  telemetry-worker:
+    internal: true
+  telemetry-flight:
+    internal: true
+  telemetry-viewer:

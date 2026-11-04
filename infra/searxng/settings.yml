@@ -1,0 +1,16 @@
+use_default_settings: true
+general:
+  instance_name: One Request Search
+search:
+  safe_search: 1
+  formats:
+    - html
+    - json
+server:
+  secret_key: "local-development-only-no-public-exposure"
+  limiter: false
+  image_proxy: false
+  bind_address: "0.0.0.0"
+  port: 8080
+outgoing:
+  request_timeout: 8.0

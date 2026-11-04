@@ -1,0 +1,45 @@
+.env
+.jury-secrets-*
+.env.*
+!.env.example
+node_modules/
+frontend/dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+data/
+tmp/
+output/
+playwright-report/
+test-results/
+frontend/debug.log
+.specify/tooling/venv/
+.specify/tooling/cache/
+*.tsbuildinfo
+
+# Machine-local agent configuration and generated code indexes.
+.codex/
+.mcp.local.json
+AGENTS.override.md
+.codegraph/
+.codegraph-cache/
+codegraph.db
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db-wal
+*.db-shm
+
+# Private signing/auth material is never a project source asset.
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Private operator artifacts and encrypted credential envelopes.
+*.age
+*.kubeconfig
+kubeconfig*
+*.har
+*.log

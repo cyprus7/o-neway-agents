@@ -1,0 +1,282 @@
+{
+  "attribution": "© OpenStreetMap contributors; Wikidata (CC0)",
+  "count_unit": "named_source_poi_not_verified_operating_property",
+  "coverage": {
+    "ayia_napa": 321,
+    "larnaca": 99,
+    "limassol": 81,
+    "nicosia": 100,
+    "paphos": 160,
+    "polis": 36,
+    "protaras": 306,
+    "troodos": 32
+  },
+  "coverage_centers": {
+    "ayia_napa": [
+      34.99,
+      34.0
+    ],
+    "larnaca": [
+      34.92,
+      33.63
+    ],
+    "limassol": [
+      34.68,
+      33.04
+    ],
+    "nicosia": [
+      35.17,
+      33.36
+    ],
+    "paphos": [
+      34.77,
+      32.42
+    ],
+    "polis": [
+      35.03,
+      32.43
+    ],
+    "protaras": [
+      35.01,
+      34.05
+    ],
+    "troodos": [
+      34.92,
+      32.88
+    ]
+  },
+  "coverage_counts_overlap": true,
+  "coverage_radius_km": 8.0,
+  "deduplication": "Stable source identity only; no name-only or fuzzy merges",
+  "geographic_bounds": [
+    34.5,
+    32.2,
+    35.8,
+    34.7
+  ],
+  "kind_counts": {
+    "apartment": 270,
+    "chalet": 118,
+    "guest_house": 181,
+    "hostel": 36,
+    "hotel": 682,
+    "motel": 13
+  },
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "link_status_counts": {
+    "coordinate_conflict": 1,
+    "linked": 18,
+    "name_conflict": 1
+  },
+  "parquet_sha256": "bf08944b0a4eacefd0b8944e84d0cbe2e4bb492430836a6b14b3fdf1a7f4ca1d",
+  "raw_sha256": "f272eccee93e84d257570261522f6fc048c39a16c99e38d5bf8eebe035fef416",
+  "release_id": "cyprus-lodgings-20261025-v2",
+  "retrieved_at": "2026-10-25T13:17:32.480818Z",
+  "row_count": 1300,
+  "schema_version": "cyprus-lodgings-v2",
+  "source_dataset_at": "2026-10-24T20:20:51Z",
+  "source_endpoint": "https://download.geofabrik.de/europe/cyprus-261024.osm.pbf",
+  "source_origins": {
+    "osm": {
+      "endpoint": "https://download.geofabrik.de/europe/cyprus-261024.osm.pbf",
+      "license": "ODbL-1.0",
+      "raw_sha256": "f272eccee93e84d257570261522f6fc048c39a16c99e38d5bf8eebe035fef416",
+      "retrieved_at": "2026-10-25T13:17:32.480818Z",
+      "source_dataset_at": "2026-10-24T20:20:51Z"
+    },
+    "wikidata": {
+      "acquisitions": [
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111112724.json",
+          "file": "wikidata-entity-Q111112724.json",
+          "id": "Q111112724",
+          "retrieved_at": "2026-10-25T15:24:53.9875679Z",
+          "revision": 1764473239,
+          "sha256": "6c91cbc8ca59cb46be9727defc45cbf3b41a5733804f4dc9514edcd73b76897a",
+          "source_updated_at": "2022-11-04T13:56:18Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111112740.json",
+          "file": "wikidata-entity-Q111112740.json",
+          "id": "Q111112740",
+          "retrieved_at": "2026-10-25T15:23:55.0182959Z",
+          "revision": 1902956625,
+          "sha256": "6988c68b75c0931ac57993c960e5d49d7c5af481a1643df36201660cedaffdd3",
+          "source_updated_at": "2023-05-26T14:00:04Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111112742.json",
+          "file": "wikidata-entity-Q111112742.json",
+          "id": "Q111112742",
+          "retrieved_at": "2026-10-25T15:24:54.2708708Z",
+          "revision": 1611253991,
+          "sha256": "417a9a609560d7d101f926da822ec9005a5c726797e5a659b703512e92591b33",
+          "source_updated_at": "2022-04-05T02:35:55Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111113203.json",
+          "file": "wikidata-entity-Q111113203.json",
+          "id": "Q111113203",
+          "retrieved_at": "2026-10-25T15:24:54.5824159Z",
+          "revision": 1709635498,
+          "sha256": "16ae7a4bf913814dc68cb36b8c369566215cc71c97db599fb2606184c7db02e5",
+          "source_updated_at": "2022-08-21T16:57:54Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111113205.json",
+          "file": "wikidata-entity-Q111113205.json",
+          "id": "Q111113205",
+          "retrieved_at": "2026-10-25T15:24:55.0671487Z",
+          "revision": 1918510333,
+          "sha256": "9228ffb8ef91a8e597774c899e9e28cd2438ef64bc8bf96db05a77c7b7831a70",
+          "source_updated_at": "2023-06-18T22:45:17Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111115913.json",
+          "file": "wikidata-entity-Q111115913.json",
+          "id": "Q111115913",
+          "retrieved_at": "2026-10-25T15:24:55.5654432Z",
+          "revision": 1930388189,
+          "sha256": "da74ef438b0f0c98801b83cc98cdd1d788aa455302778d81b323ad4bcf896ad9",
+          "source_updated_at": "2023-07-07T03:30:10Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111124854.json",
+          "file": "wikidata-entity-Q111124854.json",
+          "id": "Q111124854",
+          "retrieved_at": "2026-10-25T15:24:55.9971317Z",
+          "revision": 1902956640,
+          "sha256": "bec1eb06a8be0963883188b5a8efd83d87507cc7cf412aa84200c15fb4bfc4dd",
+          "source_updated_at": "2023-05-26T14:00:08Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111125009.json",
+          "file": "wikidata-entity-Q111125009.json",
+          "id": "Q111125009",
+          "retrieved_at": "2026-10-25T15:24:56.4258472Z",
+          "revision": 1588311535,
+          "sha256": "b769ba3e4c69239bcf047bc2333613f258fb9c17d05d626a37542b2f4ff22d36",
+          "source_updated_at": "2022-03-06T06:24:10Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111125010.json",
+          "file": "wikidata-entity-Q111125010.json",
+          "id": "Q111125010",
+          "retrieved_at": "2026-10-25T15:24:56.6813152Z",
+          "revision": 1902956660,
+          "sha256": "3a7fa0e448360b53422ea05b553c8666a3c7aae4cca0d990a565395311cba18b",
+          "source_updated_at": "2023-05-26T14:00:11Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111126319.json",
+          "file": "wikidata-entity-Q111126319.json",
+          "id": "Q111126319",
+          "retrieved_at": "2026-10-25T15:24:57.1707745Z",
+          "revision": 1912197199,
+          "sha256": "b354cefd66e06cf9ff64ee2c1c0357b29218c1260ed0361bd79fe8c7cdbdd9c4",
+          "source_updated_at": "2023-06-10T12:14:51Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111126334.json",
+          "file": "wikidata-entity-Q111126334.json",
+          "id": "Q111126334",
+          "retrieved_at": "2026-10-25T15:24:57.4439903Z",
+          "revision": 1611366380,
+          "sha256": "9fa9240468fbfd558a7c7b50ca3b1977385168af5185636167c91b0722b23bd8",
+          "source_updated_at": "2022-04-05T06:46:08Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111126335.json",
+          "file": "wikidata-entity-Q111126335.json",
+          "id": "Q111126335",
+          "retrieved_at": "2026-10-25T15:24:57.9008004Z",
+          "revision": 1902956617,
+          "sha256": "b4b0e09e2948b64a31467d9ec3d6850b56440c0fe6e50e9432d891aa4f6a4f43",
+          "source_updated_at": "2023-05-26T14:00:03Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111126336.json",
+          "file": "wikidata-entity-Q111126336.json",
+          "id": "Q111126336",
+          "retrieved_at": "2026-10-25T15:24:58.3594560Z",
+          "revision": 1611366397,
+          "sha256": "cebb90be1b861e58fd1ad31e7daea89bdd8861947ea3be410ef171717adeca7c",
+          "source_updated_at": "2022-04-05T06:46:09Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111127580.json",
+          "file": "wikidata-entity-Q111127580.json",
+          "id": "Q111127580",
+          "retrieved_at": "2026-10-25T15:24:58.6468646Z",
+          "revision": 2481418179,
+          "sha256": "16431b245473e7b72dbcc3340a75c09038cce64040dfe9c7c96872ba41a35b32",
+          "source_updated_at": "2026-04-14T13:38:04Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q111331270.json",
+          "file": "wikidata-entity-Q111331270.json",
+          "id": "Q111331270",
+          "retrieved_at": "2026-10-25T15:24:58.9498067Z",
+          "revision": 1869728494,
+          "sha256": "cb04244e812bfa916c186832da20c25f214ec47466215c6045adfaeb2f2f6424",
+          "source_updated_at": "2023-04-06T18:10:48Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q124858271.json",
+          "file": "wikidata-entity-Q124858271.json",
+          "id": "Q124858271",
+          "retrieved_at": "2026-10-25T15:24:59.3939331Z",
+          "revision": 2462806358,
+          "sha256": "591c7882142a6f0693677faf4914d67206d39f72c5119abedfc6d29a6e52cdab",
+          "source_updated_at": "2026-02-12T10:33:49Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q6512744.json",
+          "file": "wikidata-entity-Q6512744.json",
+          "id": "Q6512744",
+          "retrieved_at": "2026-10-25T15:24:59.8202684Z",
+          "revision": 2550115648,
+          "sha256": "3be20c7d1dc03723fa09770ff802ea76d47e87b6cc0a4f43c323a07131ee8d13",
+          "source_updated_at": "2026-09-27T17:49:44Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q65220357.json",
+          "file": "wikidata-entity-Q65220357.json",
+          "id": "Q65220357",
+          "retrieved_at": "2026-10-25T15:25:00.0867229Z",
+          "revision": 1901303147,
+          "sha256": "694e0649a1eaef61ab64a889fd12f0c45dde58dd85d778529f28d6d9a19f722a",
+          "source_updated_at": "2023-05-23T05:18:45Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q66424172.json",
+          "file": "wikidata-entity-Q66424172.json",
+          "id": "Q66424172",
+          "retrieved_at": "2026-10-25T15:25:00.3429591Z",
+          "revision": 2434133426,
+          "sha256": "2ff3f50d95e03524fd4864557bb306e918811d2dabe6b82880582ee7db339947",
+          "source_updated_at": "2025-11-26T07:28:36Z"
+        },
+        {
+          "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/Q69990916.json",
+          "file": "wikidata-entity-Q69990916.json",
+          "id": "Q69990916",
+          "retrieved_at": "2026-10-25T15:25:00.6105205Z",
+          "revision": 1902956633,
+          "sha256": "723d1e0bdb1433a044030a4b062f3682dba5457042f9bffa5ed304206c0f6850",
+          "source_updated_at": "2023-05-26T14:00:06Z"
+        }
+      ],
+      "endpoint": "https://www.wikidata.org/wiki/Special:EntityData/",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  "source_query": "Pinned Geofabrik Cyprus island bulk extract; named tourism=hotel/apartment/guest_house/hostel/chalet/motel nodes, ways and multipolygon relations; explicit disused=yes/abandoned=yes excluded; node locations or geometry bounding-box midpoints. Stable source IDs deduplicated; similar names and nearby map representations are not assumed to be the same property. Nearest reviewed locality within 8km or cyprus_other; search circles overlap. Independent Wikidata entity JSON is attached only by existing OSM wikidata=Q identifier; claims, revisions, references and conflicting names/coordinates remain separate and never overwrite OSM facts.",
+  "source_record_counts": {
+    "osm": 1300,
+    "wikidata": 20
+  },
+  "source_sha256": "eeca4aaef6552827d3a446a1e8cdd22dff6e5cf01edf186575b7deb83070ac7d"
+}

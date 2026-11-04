@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "outDir": ".test-build",
+    "rootDir": "src"
+  },
+  "include": ["src/live/client.ts", "src/live/state.ts", "src/live/checkActivity.ts", "src/types.ts"]
+}

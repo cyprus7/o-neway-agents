@@ -1,0 +1,63 @@
+/* Price observations use the existing local design tokens. */
+.pricing-summary { min-width: 0; overflow-wrap: anywhere; }
+.price-summary-label,.price-component-label { display: block; color: var(--color-muted); font-size: 11px; line-height: 1.5; }
+.price-headline { display: block; color: var(--color-brand); font-size: 25px; font-weight: 600; line-height: 1.3; margin-top: 5px; font-variant-numeric: tabular-nums; }
+.price-headline-unknown { color: var(--color-ink); font-size: 18px; }
+.pricing-summary p { margin: 7px 0 0; line-height: 1.6; font-size: 12px; }
+.price-scope,.price-budget,.price-summary-note,.price-summary-time,.price-exclusions { color: var(--color-muted); }
+.price-summary-note { display: flex; gap: 6px; align-items: flex-start; }
+.price-summary-note svg { flex-shrink: 0; margin-top: 3px; }
+.price-references { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.price-reference-item { min-width: 0; }
+.price-component-label { color: var(--color-brand); font-weight: 600; }
+.component-price { margin-top: 10px; padding: 12px; border-radius: var(--radius-xs); background: var(--color-brand-soft); border-left: 3px solid var(--color-brand-line); min-width: 0; overflow-wrap: anywhere; }
+.price-value-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 8px; }
+.price-value-line>strong { font-size: 24px; line-height: 1.25; color: var(--color-brand); font-weight: 600; font-variant-numeric: tabular-nums; }
+.price-kind { font-size: 10px; color: var(--color-brand); }
+.price-unit { display: block; font-size: 12px; line-height: 1.5; margin-top: 4px; color: var(--color-ink); }
+.component-price .price-reason { font-size: 12px; margin-top: 8px; color: var(--color-text); }
+.price-provenance { display: flex; flex-direction: column; gap: 3px; margin-top: 9px; color: var(--color-muted); line-height: 1.5; font-size: 11px; }
+.price-provenance a { display: inline-flex; align-items: center; align-self: flex-start; gap: 4px; margin: 0; font-size: inherit; font-weight: 500; color: var(--color-brand); }
+.price-context { margin-top: 9px; font-size: 11px; line-height: 1.5; color: var(--color-muted); }
+.price-context summary { cursor: pointer; color: var(--color-brand); padding: 4px 0; }
+.price-context p { font-size: 11px; margin: 6px 0 0; }
+.component-price .price-exclusions { font-size: 11px; margin-top: 8px; }
+.price-unavailable { background: var(--color-surface-muted); border-left-color: var(--color-line); }
+.price-unavailable>strong { font-size: 13px; color: var(--color-muted); }
+.price-unavailable p { font-size: 11px; color: var(--color-muted); margin-top: 5px; }
+.price-compact { padding: 10px; margin-top: 5px; }
+.price-compact .price-value-line>strong { font-size: 23px; }
+.price-compact .price-unit { font-size: 11px; line-height: 1.45; margin-top: 4px; }
+.price-compact .price-provenance { margin-top: 7px; gap: 2px; line-height: 1.4; }
+.price-compact .price-context { margin-top: 5px; }
+.price-compact .price-context[open]>div { padding-top: 2px; }
+.pricing-compact .price-references { gap: 10px; margin-top: 8px; }
+.pricing-compact>.price-summary-note { font-size: 11px; line-height: 1.45; }
+.options-grid:has(.pricing-summary) { align-items: start; }
+.card-price:has(.pricing-summary) { padding: 14px 0; }
+.card-price .pricing-summary strong { letter-spacing: normal; }
+.card-price .price-value-line>strong { display: inline; }
+.price-missing-reasons { padding-left: 16px; margin-top: 10px; color: var(--color-muted); font-size: 12px; line-height: 1.6; }
+.refresh-prices { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: var(--height-control); padding: 9px 12px; border: 1px solid var(--color-brand-line); border-radius: var(--radius-xs); color: var(--color-brand); background: var(--color-brand-soft); font-size: 12px; line-height: 1.4; }
+.refresh-prices:hover:not(:disabled) { background: var(--color-surface-sunken); }
+.refresh-prices:focus-visible,.price-context summary:focus-visible,.price-provenance a:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
+.card-content>.refresh-prices { width: 100%; margin-top: 12px; }
+.results-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 9px; max-width: 250px; }
+.results-actions .results-caption { max-width: none; }
+.checkout-summary>.pricing-summary { margin: 14px 0 18px; }
+.checkout-summary .pricing-summary p { margin-bottom: 0; }
+.checkout-summary>.refresh-prices { width: 100%; margin-bottom: 14px; }
+.itinerary-part .component-price { margin-top: 13px; }
+.itinerary-part .component-price p { margin-top: 7px; }
+.itinerary-part .price-value-line>strong { font-size: 25px; }
+.itinerary-part .price-provenance a { font-size: 11px; }
+@media (max-width: 680px) {
+  .results>.section-heading { align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+  .results-actions { width: 100%; max-width: none; align-items: stretch; }
+  .results-actions .results-caption { display: block; max-width: none; text-align: left; font-size: 11px; }
+  .component-price .price-reason,.pricing-summary p,.price-unit,.price-compact .price-unit { font-size: 12px; }
+  .price-value-line>strong,.price-compact .price-value-line>strong { font-size: 25px; }
+  .price-provenance { font-size: 11px; }
+  .itinerary-part:has(.component-price) { gap: 10px; }
+  .itinerary-part:has(.component-price) .part-icon { width: 30px; height: 30px; }
+}

@@ -1,0 +1,4 @@
+# Stable text files across Windows development and Linux containers.
+* text=auto eol=lf
+# Frozen benchmark bytes are hashed by retained experiments; preserve them on every OS.
+backend/tests/fixtures/embedding_relevance.json -text whitespace=trailing-space,space-before-tab,cr-at-eol

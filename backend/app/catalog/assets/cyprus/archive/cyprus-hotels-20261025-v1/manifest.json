@@ -1,0 +1,30 @@
+{
+  "attribution": "© OpenStreetMap contributors",
+  "coverage": {
+    "larnaca": 61,
+    "paphos": 79
+  },
+  "coverage_centers": {
+    "larnaca": [
+      34.92,
+      33.63
+    ],
+    "paphos": [
+      34.77,
+      32.42
+    ]
+  },
+  "coverage_radius_km": 8.0,
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "parquet_sha256": "f8e7c73636890ffc9a926e1549609000e400faa50be30d88469f771a2f0abc9b",
+  "raw_sha256": "f272eccee93e84d257570261522f6fc048c39a16c99e38d5bf8eebe035fef416",
+  "release_id": "cyprus-hotels-20261025-v1",
+  "retrieved_at": "2026-10-25T13:17:32.480818Z",
+  "row_count": 140,
+  "schema_version": "cyprus-hotels-v1",
+  "source_dataset_at": "2026-10-24T20:20:51Z",
+  "source_endpoint": "https://download.geofabrik.de/europe/cyprus-261024.osm.pbf",
+  "source_query": "Geofabrik Cyprus dated bulk extract; named tourism=hotel nodes and ways; explicit disused=yes/abandoned=yes excluded; node coordinates or way bounding-box midpoint within 8km of Larnaca(34.92,33.63) or Paphos(34.77,32.42); deduplicate matching normalized hotel names within 150m, preferring more allowed source attributes then newer object; retain only allowlisted fields, at most 500 rows. Coordinates are map observations; source object timestamps are not hotel verification times.",
+  "source_sha256": "8ca083ee46d421fe5adfc113e89412cc6fa9e63c194e7a021cc0ed111951170e"
+}

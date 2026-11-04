@@ -1,0 +1,11 @@
+.trip-library { border: 1px solid var(--color-line); background: var(--color-surface); border-radius: 16px; padding: 20px; margin-top: 20px; overflow-wrap: anywhere; }
+.trip-library h2 { font-size: 23px; }.trip-library h3 { font-size: 17px; margin-top: 24px; }
+.trip-library p,.trip-library label,.trip-library li { font-size: 12px; line-height: 1.7; }
+.library-trips,.memory-items { list-style: none; padding: 0; margin: 12px 0; }
+.library-trips li,.memory-items li { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--color-line); }
+.library-trips li>div { flex: 1; min-width: 120px; }.trip-library small { display: block; color: var(--color-muted); font-size: 11px; }
+.memory-items li>small { width: 100%; }.memory-optin { display: flex; gap: 12px; align-items: center; margin: 14px 0; min-height: 44px; }
+.memory-optin input { width: 20px; height: 20px; flex-shrink: 0; }.memory-editor { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin-top: 15px; }
+.memory-editor label { display: flex; flex-direction: column; max-width: 100%; }.memory-editor select,.memory-editor input,.memory-editor textarea { min-height: 44px; max-width: 100%; padding: 8px; background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-line-strong); border-radius: 8px; }
+.trip-library .text-button { min-height: 44px; white-space: normal; text-align: left; }.library-data-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 22px; border-top: 1px solid var(--color-line); padding-top: 12px; }
+@media(max-width:680px) { .trip-library { padding: 14px; }.memory-editor>* { width: 100%; } }

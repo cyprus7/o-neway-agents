@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "frozen_on": "2026-10-28",
+  "files": {
+    "tuning.v1.json": "995980f827b78e01282c0b8d6abf53454294e0db279d9befdc2958f0b9a7d5a3",
+    "held-out.v1.json": "d2f6c47a8ccc56f39ee527c837792934864ff5b71a85b36d8c0691e2b80b8501"
+  },
+  "canonicalization": "utf8-lf-no-bom-v1",
+  "canonicalization_rules": [
+    "Decode strict UTF-8; reject UTF-8 BOM.",
+    "Replace CRLF with LF; reject remaining lone CR.",
+    "Preserve all other bytes, including JSON formatting and final newline."
+  ],
+  "historical_raw_fingerprints": {
+    "description": "Original working-tree CRLF hashes retained for audit; not portable validation hashes.",
+    "files": {
+      "tuning.v1.json": "71c10e4e99d1630e53ec0012b45eb1afe38ba9c7ee523416e0c21b5ce37405db",
+      "held-out.v1.json": "9d823e99ef2f3a3a707e4de296eff6d8d5254f4f578490b104212d330c0d5f0e"
+    },
+    "combined_sha256": "40d7439f364d941c522ca75f1b7469f385de8e7d8687bfdd9349e6f855d4a1d2",
+    "report": "baseline.fixture.v1.json; historical report remains unchanged"
+  }
+}

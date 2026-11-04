@@ -1,0 +1,204 @@
+[
+  {
+    "id": "A01",
+    "name": "departure-missing",
+    "split": "tuning",
+    "stage": "clarify",
+    "adversarial": false,
+    "capability": "clarification",
+    "useful_outcome": "Ask one blocking question and retain explicitly supplied fields without claiming inventory.",
+    "unknown_is_useful": true,
+    "retained_fields": [],
+    "invalidated_fields": [
+      "selected_option_id"
+    ],
+    "provenance_scope": "No provider observations; no sourced prices or availability may be created.",
+    "hard_constraints": [
+      "no_fabricated_inventory",
+      "explicit_fields_retained",
+      "selection_cleared"
+    ],
+    "turns": [
+      {
+        "input": "Where can I go for five nights?",
+        "fixture_patch": {
+          "nights_min": 5
+        },
+        "expected_fields": {
+          "nights_min": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "A02",
+    "name": "dates-missing",
+    "split": "tuning",
+    "stage": "clarify",
+    "adversarial": false,
+    "capability": "clarification",
+    "useful_outcome": "Ask one blocking question and retain explicitly supplied fields without claiming inventory.",
+    "unknown_is_useful": true,
+    "retained_fields": [],
+    "invalidated_fields": [
+      "selected_option_id"
+    ],
+    "provenance_scope": "No provider observations; no sourced prices or availability may be created.",
+    "hard_constraints": [
+      "no_fabricated_inventory",
+      "explicit_fields_retained",
+      "selection_cleared"
+    ],
+    "turns": [
+      {
+        "input": "From Berlin to Paphos, two adults.",
+        "fixture_patch": {
+          "origin": "Berlin",
+          "destination": "Paphos"
+        },
+        "expected_fields": {
+          "origin": "Berlin",
+          "destination": "Paphos"
+        }
+      }
+    ]
+  },
+  {
+    "id": "A03",
+    "name": "destination-not-departure",
+    "split": "tuning",
+    "stage": "clarify",
+    "adversarial": false,
+    "capability": "clarification",
+    "useful_outcome": "Ask one blocking question and retain explicitly supplied fields without claiming inventory.",
+    "unknown_is_useful": true,
+    "retained_fields": [],
+    "invalidated_fields": [
+      "selected_option_id"
+    ],
+    "provenance_scope": "No provider observations; no sourced prices or availability may be created.",
+    "hard_constraints": [
+      "no_fabricated_inventory",
+      "explicit_fields_retained",
+      "selection_cleared"
+    ],
+    "turns": [
+      {
+        "input": "I depart Berlin; stay in Paphos.",
+        "fixture_patch": {
+          "origin": "Berlin",
+          "destination": "Paphos"
+        },
+        "expected_fields": {
+          "origin": "Berlin",
+          "destination": "Paphos"
+        }
+      }
+    ]
+  },
+  {
+    "id": "A04",
+    "name": "child-scope",
+    "split": "tuning",
+    "stage": "clarify",
+    "adversarial": false,
+    "capability": "clarification",
+    "useful_outcome": "Ask one blocking question and retain explicitly supplied fields without claiming inventory.",
+    "unknown_is_useful": true,
+    "retained_fields": [],
+    "invalidated_fields": [
+      "selected_option_id"
+    ],
+    "provenance_scope": "No provider observations; no sourced prices or availability may be created.",
+    "hard_constraints": [
+      "no_fabricated_inventory",
+      "explicit_fields_retained",
+      "selection_cleared"
+    ],
+    "turns": [
+      {
+        "input": "Two adults and children aged 4 and 4.",
+        "fixture_patch": {
+          "adults": 2,
+          "children_ages": [
+            4,
+            4
+          ]
+        },
+        "expected_fields": {
+          "adults": 2,
+          "children_ages": [
+            4,
+            4
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "A05",
+    "name": "pet-unknown",
+    "split": "tuning",
+    "stage": "clarify",
+    "adversarial": false,
+    "capability": "clarification",
+    "useful_outcome": "Ask one blocking question and retain explicitly supplied fields without claiming inventory.",
+    "unknown_is_useful": true,
+    "retained_fields": [],
+    "invalidated_fields": [
+      "selected_option_id"
+    ],
+    "provenance_scope": "No provider observations; no sourced prices or availability may be created.",
+    "hard_constraints": [
+      "no_fabricated_inventory",
+      "explicit_fields_retained",
+      "selection_cleared"
+    ],
+    "turns": [
+      {
+        "input": "I need a hotel accepting a large dog.",
+        "fixture_patch": {
+          "pets": [
+            "large dog"
+          ]
+        },
+        "expected_fields": {
+          "pets": [
+            "large dog"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "A06",
+    "name": "negated-exclusion",
+    "split": "tuning",
+    "stage": "clarify",
+    "adversarial": true,
+    "capability": "clarification",
+    "useful_outcome": "Ask one blocking question and retain explicitly supplied fields without claiming inventory.",
+    "unknown_is_useful": true,
+    "retained_fields": [],
+    "invalidated_fields": [
+      "selected_option_id"
+    ],
+    "provenance_scope": "No provider observations; no sourced prices or availability may be created.",
+    "hard_constraints": [
+      "no_fabricated_inventory",
+      "explicit_fields_retained",
+      "selection_cleared"
+    ],
+    "turns": [
+      {
+        "input": "Do not exclude hostels.",
+        "fixture_patch": {
+          "hard_constraints": []
+        },
+        "expected_fields": {
+          "hard_constraints": []
+        }
+      }
+    ]
+  }
+]

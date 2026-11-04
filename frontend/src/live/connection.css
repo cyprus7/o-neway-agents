@@ -1,0 +1,8 @@
+.live-connection { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px 12px; min-height: 34px; margin: 12px 0 -10px; font-size: 11px; color: var(--color-brand); }
+.live-connection-message { display: inline-flex; align-items: center; gap: 6px; }
+.live-connection-connecting,.live-connection-reconnecting { justify-content: space-between; padding: 10px 13px; margin-bottom: 0; background: var(--color-warning-soft); color: var(--color-warning); border: 1px solid var(--color-line); border-radius: var(--radius-sm); }
+.live-retry { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 32px; padding: 4px 8px; border: 1px solid currentColor; border-radius: var(--radius-xs); background: transparent; color: inherit; font-size: 11px; }
+.live-retry:hover { background: var(--color-surface); }
+.live-retry:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+@media(max-width:680px) { .live-connection { font-size: 10px; }.live-retry { min-height: 44px; padding-inline: 10px; } }
+@media(prefers-reduced-motion:reduce) { .live-connection .spin { animation: none; } }

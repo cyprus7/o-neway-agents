@@ -1,0 +1,371 @@
+{
+  "feature": "002-travel-pricing",
+  "version": 1,
+  "created": "2026-10-24",
+  "status": "definition_not_executed",
+  "new_accounts_or_subscriptions": false,
+  "llm_calls": 0,
+  "denominator": 20,
+  "minimum_both_components": 14,
+  "selection_rule": "Freeze manifest and provider policy hash before probe. All failures stay in denominator. Observe scope and source, no fixture prices.",
+  "cases": [
+    {
+      "id": "B001",
+      "origin_iata": "WAW",
+      "destination_iata": "LCA",
+      "stay_destination": "Ларнака",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [
+        6
+      ],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B002",
+      "origin_iata": "WAW",
+      "destination_iata": "AYT",
+      "stay_destination": "Анталья",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B003",
+      "origin_iata": "WAW",
+      "destination_iata": "HRG",
+      "stay_destination": "Хургада",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [
+        6
+      ],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B004",
+      "origin_iata": "WAW",
+      "destination_iata": "TFS",
+      "stay_destination": "Тенерифе",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B005",
+      "origin_iata": "BER",
+      "destination_iata": "LIS",
+      "stay_destination": "Лиссабон",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 1,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B006",
+      "origin_iata": "BER",
+      "destination_iata": "DXB",
+      "stay_destination": "Дубай",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B007",
+      "origin_iata": "VIE",
+      "destination_iata": "PFO",
+      "stay_destination": "Пафос",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [
+        8
+      ],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B008",
+      "origin_iata": "VIE",
+      "destination_iata": "ATH",
+      "stay_destination": "Афины",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B009",
+      "origin_iata": "PRG",
+      "destination_iata": "FCO",
+      "stay_destination": "Рим",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B010",
+      "origin_iata": "PRG",
+      "destination_iata": "BCN",
+      "stay_destination": "Барселона",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 1,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B011",
+      "origin_iata": "LHR",
+      "destination_iata": "LPA",
+      "stay_destination": "Гран-Канария",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [
+        4,
+        9
+      ],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B012",
+      "origin_iata": "LHR",
+      "destination_iata": "MLE",
+      "stay_destination": "Мальдивы",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B013",
+      "origin_iata": "CDG",
+      "destination_iata": "TFS",
+      "stay_destination": "Тенерифе",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B014",
+      "origin_iata": "CDG",
+      "destination_iata": "DXB",
+      "stay_destination": "Дубай",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [
+        1
+      ],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B015",
+      "origin_iata": "AMS",
+      "destination_iata": "LCA",
+      "stay_destination": "Ларнака",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [
+        12
+      ],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B016",
+      "origin_iata": "AMS",
+      "destination_iata": "BUD",
+      "stay_destination": "Будапешт",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 4,
+      "children_ages": [],
+      "rooms": 2,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B017",
+      "origin_iata": "CPH",
+      "destination_iata": "AYT",
+      "stay_destination": "Анталья",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [
+        3,
+        10
+      ],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B018",
+      "origin_iata": "CPH",
+      "destination_iata": "FCO",
+      "stay_destination": "Рим",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B019",
+      "origin_iata": "ZRH",
+      "destination_iata": "LIS",
+      "stay_destination": "Лиссабон",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 1,
+      "children_ages": [],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    },
+    {
+      "id": "B020",
+      "origin_iata": "WAW",
+      "destination_iata": "MLE",
+      "stay_destination": "Мальдивы",
+      "date_from": "2026-11-24",
+      "date_to": "2026-12-03",
+      "adults": 2,
+      "children_ages": [
+        6
+      ],
+      "rooms": 1,
+      "currency": "EUR",
+      "trip_type": "roundtrip",
+      "required_components": [
+        "flight",
+        "stay"
+      ]
+    }
+  ]
+}
